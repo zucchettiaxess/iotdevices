@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "jsonrpc": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "params": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "fw": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        },
+        "mac": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "ssid": {
+          "type": "string"
+        },
+        "bssid": {
+          "type": "string"
+        },
+        "err": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "mess": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "mess"
+          ]
+        },
+        "pw": {
+          "type": "object",
+          "properties": {
+            "bat": {
+              "type": "integer"
+            },
+            "ac": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "bat",
+            "ac"
+          ]
+        },
+        "beta": {
+          "type": "boolean"
+        },
+        "payload": {
+          "type": "string"
+        },
+        "extra_fw": {
+          "type": "object",
+          "properties": {
+            "BLEv3": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "BLEv3"
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "properties": {
+            "reader": {
+              "type": "object",
+              "properties": {
+                "ble_name": {
+                  "type": "string"
+                },
+                "ble_mode": {
+                  "type": "integer"
+                },
+                "pw_trans": {
+                  "type": "integer"
+                },
+                "fw": {
+                  "type": "string"
+                },
+                "comm_fail": {
+                  "type": "boolean"
+                },
+                "tag_in": {
+                  "type": "integer"
+                },
+                "tag_out": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ble_name",
+                "ble_mode",
+                "pw_trans",
+                "fw",
+                "comm_fail",
+                "tag_in",
+                "tag_out"
+              ]
+            },
+            "ibeacon": {
+              "type": "object",
+              "properties": {
+                "major": {
+                  "type": "integer"
+                },
+                "minor": {
+                  "type": "integer"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "rssi1mt": {
+                  "type": "integer"
+                },
+                "enable": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "major",
+                "minor",
+                "uuid",
+                "rssi1mt",
+                "enable"
+              ]
+            },
+            "system": {
+              "type": "object",
+              "properties": {
+                "bat": {
+                  "type": "integer"
+                },
+                "power": {
+                  "type": "boolean"
+                },
+                "ap": {
+                  "type": "boolean"
+                }
+              },
+            }
+          },
+        }
+      },
+      "required": [
+        "type",
+        "fw",
+        "uid",
+        "mac",
+      ]
+    },
+    "id": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "jsonrpc",
+    "method",
+    "params",
+    "id"
+  ]
+}
